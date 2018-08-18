@@ -28,7 +28,7 @@
                 Console.ReadKey();
                 return;
             }
-
+            
             var calculationRequest = new CalculationRequest
             {
                 BufferSize = 10 * 1024 * 1024,
@@ -53,6 +53,7 @@
            
             fileProcessor.Process();
 
+            Console.WriteLine("\nPress any key to exit...");
             Console.ReadKey();
         }        
     }

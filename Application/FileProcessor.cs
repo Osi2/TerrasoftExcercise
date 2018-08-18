@@ -15,6 +15,8 @@
        
         public void Process()
         {
+            Console.WriteLine($"Start processing file {CalculationRequest.SourceFileName}");
+
             long count = 0;
             var inputText = new List<string>();
             var mapReduceDict = new ConcurrentDictionary<string, uint>(CalculationRequest.StringComparer);

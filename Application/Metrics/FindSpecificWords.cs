@@ -10,8 +10,6 @@
         public string[] Words { get; set; }
         public CalculationResponse Calculate(CalculationRequest calculationRequest, MapReduceWrapper mapReduceWrapper)
         {
-            Console.WriteLine("Started metric FindSpecificWords");
-
             var resList = mapReduceWrapper.mapReduce.ToList().OrderByDescending(kvp => kvp.Value).Where(kvp => Words.Contains(kvp.Key));
 
             var response = new CalculationResponse
@@ -20,9 +18,7 @@
                 ResultWords = resList.Select(kvp => kvp.Key).ToList(),
                 ResultWordsCount = resList.Select(kvp => kvp.Value).ToList()
             };
-
-            Console.WriteLine("Completed metric FindSpecificWords");
-
+            
             return response;
         }
     }

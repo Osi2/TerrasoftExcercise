@@ -9,8 +9,6 @@
     {
         public CalculationResponse Calculate(CalculationRequest calculationRequest, MapReduceWrapper mapReduceWrapper)
         {
-            Console.WriteLine("Started metric MostPopularWord");
-
             var res = mapReduceWrapper.mapReduce.ToList().OrderByDescending(kvp => kvp.Value).First();
 
             var response = new CalculationResponse
@@ -19,8 +17,6 @@
                 ResultWord = res.Key,
                 ResultWordCount = res.Value
             };
-
-            Console.WriteLine("Completed metric MostPopularWord");
 
             return response;
         }

@@ -10,8 +10,6 @@
     {
         public CalculationResponse Calculate(CalculationRequest calculationRequest, MapReduceWrapper mapReduceWrapper)
         {
-            Console.WriteLine("Started metric TenMostPopularWords");
-
             var resList = mapReduceWrapper.mapReduce.ToList().OrderByDescending(kvp => kvp.Value).Take(10);
 
             var response = new CalculationResponse
@@ -21,10 +19,7 @@
                 ResultWordsCount  = resList.Select(kvp => kvp.Value).ToList()
             };
 
-            Console.WriteLine("Completed metric TenMostPopularWords");
-
             return response;
-
         }
     }
 }

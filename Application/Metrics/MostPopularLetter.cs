@@ -11,8 +11,6 @@
     {
         public CalculationResponse Calculate(CalculationRequest calculationRequest, MapReduceWrapper mapReduceWrapper)
         {
-            Console.WriteLine("Started metric MostPopularLetter");
-
             var result = new Dictionary<char, long>();
 
             for (char c = 'A'; c <= 'z'; c++)
@@ -29,9 +27,7 @@
                 ResultChar = resKVP.Key,
                 ResultCharCount = resKVP.Value
             };
-
-            Console.WriteLine("Completed metric MostPopularLetter");
-
+            
             return response;
         }
 
