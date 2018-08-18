@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Osi
 {
+    // SOME description
     public class Class1
     {
     }
